@@ -3,6 +3,8 @@ from ROOT import gROOT, TFile, TH1, TH2D, TCanvas
 from optparse import OptionParser
 from functions import *   # Here the functions like printError are defined
 
+import os
+
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -49,7 +51,7 @@ def runANALYSIS(options):
     n_events = tree.GetEntries()
     for i_event in range(n_events):
         tree.GetEntry(i_event) # Update the entry with the properties of the event
-        if i_event % 5000 == 0 or i_event == n_events - 1: print("Processing event {} ({:.2f} %)".format(i_event, 100*(i_event+1)/n_events))
+        if i_event % 10000 == 0 or i_event == n_events - 1: print("Processing event {} ({:.2f} %)".format(i_event, 100*(i_event+1)/n_events))
 
         # Filling arrays before selection
         met_for_histogram.append(tree.met_tst_et / 1000.)
