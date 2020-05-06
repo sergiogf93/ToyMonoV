@@ -60,7 +60,7 @@ def runANALYSIS(options):
         if tree.met_fire == 0: continue                                     # MET triggers
         if tree.n_el_baseline != 0 or tree.n_mu_baseline != 0: continue     # Lepton veto
         if tree.n_TCCJet == 0: continue                                     # Ask for one Large-R Jet
-        if tree.dPhiTCCJetMet <= 120*DegToRad: continue                     # Delta phi between large jet and MET has to be > 120º
+        if tree.dPhiTCCJetMet <= 120*DegToRad: continue                     # Delta phi between large jet and MET has to be > 120
         if tree.n_trackTCCSeparatedBjet != 0: continue                      # No b-jets out of the Large jet
         if tree.n_trackTCCAssociatedBjet != 0: continue                     # Doing the 0 b-jet selection
         if tree.met_tst_et <= 250*GeV: continue                             # MET > 250 GeV
